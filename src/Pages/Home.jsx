@@ -23,7 +23,6 @@ function Home() {
             width: "30%",
             height: "100%",
             marginRight: "20px",
-            overflowY:"scroll"
           }}
         >
           <Sidebar />

@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import { deleteAContact, getAContact } from "../Services/allAPI";
 import { message, Popconfirm } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
+import { ToastContainer, toast } from "react-toastify";
+
 
 function Details() {
   // for contact
@@ -28,7 +30,7 @@ function Details() {
   // pop confirm codes
   const confirm = (e) => {
     handleDelete();
-    message.success("Click on Yes");
+    toast.success("Contact deleted !");
   };
 
   return (
@@ -42,14 +44,14 @@ function Details() {
                   fas
                   icon="arrow-left"
                   size="sm"
-                  className="me-3 mb-10 text-muted "
+                  className="me-3 text-muted "
                 />
               </Link>{" "}
               <img
-                src="https://mdbootstrap.com/img/new/avatars/9.jpg"
+                src={contact.image}
                 className="rounded-circle"
-                height="162"
-                width="162"
+                height="120"
+                width="120"
                 alt="Avatar"
               />
               <div className="ms-4">
@@ -165,6 +167,18 @@ function Details() {
           )}
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 }

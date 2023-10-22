@@ -49,7 +49,7 @@ function Edit() {
           </div>
           {/* contact section  */}
           <div
-            className="d-flex justify-content-center align-items-center"
+            className=""
             style={{ height: "90%", backgroundColor: "white" }}
           >
             <EditContact index={index}/>

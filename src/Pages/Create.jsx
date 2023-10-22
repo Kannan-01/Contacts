@@ -39,7 +39,7 @@ function Home() {
             <Navibar/>
           </div>
           {/* contact section  */}
-          <div className="d-flex justify-content-center align-items-center" style={{ height: "90%",backgroundColor: "white" }}>
+          <div style={{ height: "90%",backgroundColor: "white" }}>
             <NewContact/>
           </div>
         </div>

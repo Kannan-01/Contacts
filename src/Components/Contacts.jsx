@@ -36,7 +36,7 @@ function Contacts() {
                       onClick={() => handleShow(item.id)}
                     >
                       <img
-                        src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                        src={item.image}
                         alt=""
                         style={{ width: "45px", height: "45px" }}
                         className="rounded-circle"
