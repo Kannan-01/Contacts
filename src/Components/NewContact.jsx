@@ -44,8 +44,7 @@ function NewContact() {
           job: "",
           phone: "",
           dob: "",
-          notes: "",
-          image: "", 
+          notes: "", 
         });
       } else {
         toast.error("Upload Error!");

@@ -7,10 +7,9 @@ import Navbar from "react-bootstrap/Navbar";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { Link } from "react-router-dom";
 import { deleteAContact, getAContact } from "../Services/allAPI";
-import { message, Popconfirm } from "antd";
+import { Popconfirm } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 import { ToastContainer, toast } from "react-toastify";
-
 
 function Details() {
   // for contact
@@ -139,10 +138,16 @@ function Details() {
                   {contact.email}
                 </li>
               )}
-              {contact.job && (
+              {contact.company && (
                 <li>
                   <MDBIcon fas icon="building" className="me-3 mt-2" />
-                  Makayiram, Kandanad
+                  {contact.company}
+                </li>
+              )}
+              {contact.job && (
+                <li>
+                  <MDBIcon fas icon="map-marker-alt" className="me-3 mt-2" />
+                  {contact.job}
                 </li>
               )}
               {contact.phone && (
