@@ -24,6 +24,7 @@ function Sidebar() {
             </Link>
           </MDBContainer>
         </MDBNavbar>
+        <hr />
       </div>
       <div className="d-flex">
         <div className="mt-4">
