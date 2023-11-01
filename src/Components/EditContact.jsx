@@ -43,10 +43,9 @@ function NewContact(props) {
 
   console.log(contact);
   return (
-    <div>
       <div>
-        <Navbar expand="lg" className="bg-body-light mb-auto shadow-0">
-          <Container>
+        <Navbar expand="lg" className="bg-body-light">
+          <Container fluid>
             {contact && (
               <Navbar.Brand>
                 <Link to={"/view"}>
@@ -54,11 +53,11 @@ function NewContact(props) {
                     fas
                     icon="times"
                     size="sm"
-                    className="me-3 text-muted "
+                    className="me-4 text-muted "
                   />
                 </Link>{" "}
                 <img
-                  src={contact.image}
+                  src={contact?.image}
                   className="rounded-circle"
                   height="120"
                   width="120"
@@ -82,10 +81,10 @@ function NewContact(props) {
                   </Form>
                 </Modal>
                 <div className="ms-4">
-                  <h2>
-                    {contact.fname} {contact.lname}
+                  <h2 style={{textTransform:"capitalize"}}>
+                    {contact?.fname} {contact?.lname}
                   </h2>
-                  <h6 className="text-muted">{contact.phone}</h6>
+                  <h6 className="text-muted">{contact?.phone}</h6>
                 </div>
               </Navbar.Brand>
             )}
@@ -111,9 +110,7 @@ function NewContact(props) {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-        <hr />
-      </div>
-      <div className="d-flex justify-content-center align-items-center ">
+      <div className="d-flex justify-content-center align-items-center mt-3">
         <Form>
           {/* name */}
           <div className="d-flex">
@@ -134,7 +131,7 @@ function NewContact(props) {
                   <Form.Control
                     type="text"
                     placeholder="First Name"
-                    value={contact.fname}
+                    value={contact?.fname}
                     onChange={(e) =>
                       setContact({ ...contact, fname: e.target.value })
                     }
@@ -154,7 +151,7 @@ function NewContact(props) {
                   <Form.Control
                     type="text"
                     placeholder="Last Name"
-                    value={contact.lname}
+                    value={contact?.lname}
                     onChange={(e) =>
                       setContact({ ...contact, lname: e.target.value })
                     }
@@ -182,7 +179,7 @@ function NewContact(props) {
                   <Form.Control
                     type="text"
                     placeholder="Address"
-                    value={contact.company}
+                    value={contact?.company}
                     onChange={(e) =>
                       setContact({ ...contact, company: e.target.value })
                     }
@@ -202,7 +199,7 @@ function NewContact(props) {
                   <Form.Control
                     type="text"
                     placeholder="Location"
-                    value={contact.job}
+                    value={contact?.job}
                     onChange={(e) =>
                       setContact({ ...contact, job: e.target.value })
                     }
@@ -230,7 +227,7 @@ function NewContact(props) {
                   <Form.Control
                     type="text"
                     placeholder="Email"
-                    value={contact.email}
+                    value={contact?.email}
                     onChange={(e) =>
                       setContact({ ...contact, email: e.target.value })
                     }
@@ -259,7 +256,7 @@ function NewContact(props) {
                   <Form.Control
                     type="text"
                     placeholder="Phone"
-                    value={contact.phone}
+                    value={contact?.phone}
                     onChange={(e) =>
                       setContact({ ...contact, phone: e.target.value })
                     }
@@ -291,7 +288,7 @@ function NewContact(props) {
                     onChange={(e) =>
                       setContact({ ...contact, dob: e.target.value })
                     }
-                    value={contact.dob}
+                    value={contact?.dob}
                   />
                 </Form.Group>{" "}
               </>
@@ -321,7 +318,7 @@ function NewContact(props) {
                     onChange={(e) =>
                       setContact({ ...contact, notes: e.target.value })
                     }
-                    value={contact.notes}
+                    value={contact?.notes}
                   />
                 </Form.Group>{" "}
               </>

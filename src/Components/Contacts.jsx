@@ -1,10 +1,18 @@
-import { MDBTable, MDBTableBody, MDBTableHead } from "mdb-react-ui-kit";
+import {
+  MDBTable,
+  MDBTableBody,
+  MDBTableHead,
+  MDBBadge,
+  MDBBtn,
+} from "mdb-react-ui-kit";
 import React, { useEffect, useState } from "react";
-import "../assets/css/main.css";
-import { viewContacts } from "../Services/allAPI";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 import { updateIndex } from "../Redux/sliceIndex";
+import { viewContacts } from "../Services/allAPI";
+import "../assets/css/main.css";
+import Container from "react-bootstrap/Container";
+
 function Contacts() {
   useSelector((state) => state.indexData.index);
   const dispatch = useDispatch();
@@ -22,55 +30,56 @@ function Contacts() {
   };
   return (
     <div className="scroll-container">
-      <MDBTable align="middle">
-        <MDBTableHead></MDBTableHead>
-        <MDBTableBody>
-          {allContacts.length > 0 ? (
-            allContacts.map((item) => (
-              <tr>
-                <td>
-                  <Link to={"/view"} style={{ color: "black" }}>
-                    <div
-                      className="d-flex align-items-center"
-                      draggable
-                      onClick={() => handleShow(item.id)}
-                    >
-                      <img
-                        src={item.image}
-                        alt=""
-                        style={{ width: "45px", height: "45px" }}
-                        className="rounded-circle"
-                      />
-                      <div className="ms-3">
-                        <p
-                          className="fw-bolder mb-1"
-                          style={{
-                            textTransform: "capitalize",
-                            fontFamily: "Poppins,sans-serif",
-                            fontSize: "1rem",
-                          }}
-                        >
-                          {item?.fname} {item?.lname}
-                        </p>
-                        <p
-                          className="text-muted mb-0"
-                          style={{ fontFamily: "Poppins,sans-serif" }}
-                        >
-                          {item?.phone}
-                        </p>
+      <Container fluid>
+        <MDBTable align="middle">
+          <MDBTableBody>
+            {allContacts?.length > 0 ? (
+              allContacts?.map((item) => (
+                <tr>
+                  <td>
+                    <Link to={"/view"} style={{ color: "black" }}>
+                      <div
+                        className="d-flex align-items-center"
+                        draggable
+                        onClick={() => handleShow(item.id)}
+                      >
+                        <img
+                          src={item.image}
+                          alt=""
+                          style={{ width: "45px", height: "45px" }}
+                          className="rounded-circle"
+                        />
+                        <div className="ms-3">
+                          <p
+                            className="fw-bolder mb-1"
+                            style={{
+                              textTransform: "capitalize",
+                              fontFamily: "Poppins,sans-serif",
+                              fontSize: "1rem",
+                            }}
+                          >
+                            {item?.fname} {item?.lname}
+                          </p>
+                          <p
+                            className="text-muted mb-0"
+                            style={{ fontFamily: "Poppins,sans-serif" }}
+                          >
+                            {item?.phone}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <p className="fw-bolder mt-3 ms-5 fs-5 text-danger">
-              Nothing to Display !
-            </p>
-          )}
-        </MDBTableBody>
-      </MDBTable>
+                    </Link>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <p className="fw-bolder mt-3 ms-5 fs-5 text-danger">
+                Nothing to Display !
+              </p>
+            )}
+          </MDBTableBody>
+        </MDBTable>
+      </Container>
     </div>
   );
 }

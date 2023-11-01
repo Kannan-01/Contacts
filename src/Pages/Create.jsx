@@ -1,51 +1,50 @@
 import React from "react";
 import Navibar from "../Components/Navibar";
-import Sidebar from "../Components/Sidebar";
 import NewContact from "../Components/NewContact";
 function Home() {
   return (
+// background parent
+<div
+className="d-flex justify-content-center align-items-center"
+style={{ height: "100vh" }}
+>
+{/* container inside parent */}
+<div
+  style={{
+    width: "95%",
+    height: "90%",
+    borderRadius: "50%",
+  }}
+  className="d-flex"
+>
+  {/* for the content  */}
+  <div
+    style={{
+      width: "100%",
+    }}
+  >
     <div
-      className="d-flex justify-content-center align-items-center"
-      style={{ height: "100vh", backgroundColor: "#f2f2f2" }}
+      style={{
+        height: "10%",
+        backgroundImage:"radial-gradient( circle 590px at 8.2% 13.8%,  rgba(18,35,60,1) 0%, #bbb 90% )",
+      }}
     >
-      <div
-        style={{
-          width: "95%",
-          height: "90%",
-          backgroundColor: "#f2f2f2",
-        }}
-        className="d-flex"
-      >
-        {/* for side bar */}
-        <div
-          style={{
-            backgroundColor: "white",
-            width: "30%",
-            height: "100%",
-            marginRight:"20px",
-          }}
-        >
-          <Sidebar/>
-        </div>
-
-        <div style={{ width: "100%", backgroundColor: "#f2f2f2",borderRadius:"10px" }}>
-            {/* navbar */}
-          <div
-            style={{
-              height: "10%",
-              backgroundColor: "white"
-            }}
-          >
-            <Navibar/>
-          </div>
-          {/* contact section  */}
-          <div style={{ height: "90%",backgroundColor: "white" }}>
-            <NewContact/>
-          </div>
-        </div>
-      </div>
+      <Navibar />
     </div>
 
+    <div className="d-flex" style={{ height: "90%" }}>
+      <div
+        style={{
+          width: "100%",
+          backgroundColor:"white",
+        }}
+      >
+        <NewContact />
+      </div>
+    </div>
+  </div>
+</div>
+</div>
   );
 }
 

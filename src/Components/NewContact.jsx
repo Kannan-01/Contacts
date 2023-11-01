@@ -21,7 +21,8 @@ function NewContact() {
     phone: "",
     dob: "",
     notes: "",
-    image:"https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+    image:
+      "https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg",
   });
 
   const handleUpload = async () => {
@@ -44,14 +45,14 @@ function NewContact() {
           job: "",
           phone: "",
           dob: "",
-          notes: "", 
+          notes: "",
         });
       } else {
         toast.error("Upload Error!");
       }
     }
   };
-  
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -65,8 +66,8 @@ function NewContact() {
   return (
     <div>
       <div>
-        <Navbar expand="lg" className="bg-body-light mb-auto shadow-0">
-          <Container>
+        <Navbar expand="lg" className="bg-body-light mb-4">
+          <Container fluid>
             <Navbar.Brand>
               <Link to={"/"}>
                 <MDBIcon
@@ -143,7 +144,6 @@ function NewContact() {
           </Container>
         </Navbar>
       </div>
-      <hr />
       <div className="d-flex justify-content-center ">
         <Form>
           {/* name */}

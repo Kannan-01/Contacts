@@ -1,64 +1,50 @@
 import React from "react";
-import Navibar from "../Components/Navibar";
-import Contacts from "../Components/Contacts";
-import Sidebar from "../Components/Sidebar";
 import Details from "../Components/Details";
+import Navibar from "../Components/Navibar";
 function Home() {
   return (
-    <div
-      className="d-flex justify-content-center align-items-center"
-      style={{ height: "100vh", backgroundColor: "#f2f2f2" }}
-    >
-      <div
-        style={{
-          width: "95%",
-          height: "90%",
-          backgroundColor: "#f2f2f2",
-        }}
-        className="d-flex"
+        // background parent
+        <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "100vh" }}
       >
-        {/* for side bar */}
+        {/* container inside parent */}
         <div
           style={{
-            backgroundColor: "white",
-            width: "30%",
-            height: "100%",
-            marginRight: "20px",
+            width: "95%",
+            height: "90%",
+            borderRadius: "50%",
           }}
+          className="d-flex"
         >
-          <Sidebar />
-        </div>
-
-        <div
-          style={{
-            width: "100%",
-            backgroundColor: "#f2f2f2",
-            borderRadius: "10px",
-          }}
-        >
-          {/* navbar */}
+          {/* for the content  */}
           <div
             style={{
-              height: "10%",
-              backgroundColor: "white",
+              width: "100%",
             }}
           >
-            <Navibar />
-          </div>
-          {/* contact section  */}
-          <div className="d-flex" style={{ height: "90%" }}>
             <div
               style={{
-                width: "100%",
-                backgroundColor: "white",
+                height: "10%",
+                backgroundImage:"radial-gradient( circle 590px at 8.2% 13.8%,  rgba(18,35,60,1) 0%, #bbb 90% )",
               }}
             >
-              <Details />
+              <Navibar />
+            </div>
+  
+            <div className="d-flex" style={{ height: "90%" }}>
+              <div
+                style={{
+                  width: "100%",
+                  backgroundColor:"white",
+                }}
+              >
+                <Details />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

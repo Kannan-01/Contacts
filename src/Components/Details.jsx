@@ -26,7 +26,7 @@ function Details() {
   const handleDelete = async () => {
     await deleteAContact(index);
   };
-  // pop confirm codes
+  // pop confirm codesz
   const confirm = (e) => {
     handleDelete();
     toast.success("Contact deleted !");
@@ -34,8 +34,8 @@ function Details() {
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-light mb-auto shadow-0">
-        <Container>
+      <Navbar expand="lg" className="bg-body-light mb-auto">
+        <Container fluid>
           {contact && (
             <Navbar.Brand>
               <Link to={"/"}>
@@ -43,7 +43,7 @@ function Details() {
                   fas
                   icon="arrow-left"
                   size="sm"
-                  className="me-3 text-muted "
+                  className="me-4 text-muted "
                 />
               </Link>{" "}
               <img
@@ -54,7 +54,7 @@ function Details() {
                 alt="Avatar"
               />
               <div className="ms-4">
-                <h2>
+                <h2  style={{textTransform:"capitalize"}}>
                   {contact.fname} {contact.lname}
                 </h2>
                 <h6 className="text-muted">{contact.phone}</h6>
@@ -107,7 +107,6 @@ function Details() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <hr />
       <div
         className="ms-5 mt-5 d-flex justify-content-center "
         style={{
