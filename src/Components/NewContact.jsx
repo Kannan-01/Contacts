@@ -104,7 +104,7 @@ function NewContact() {
                 </Button>
               </div>
               <Modal
-                title="Basic Modal"
+                title="Contact Image"
                 open={isModalOpen}
                 onOk={handleOk}
                 onCancel={handleCancel}

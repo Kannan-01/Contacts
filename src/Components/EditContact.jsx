@@ -65,7 +65,7 @@ function NewContact(props) {
                   onClick={showModal}
                 />
                 <Modal
-                  title="Basic Modal"
+                  title="Contact Image"
                   open={isModalOpen}
                   onOk={handleOk}
                   onCancel={handleCancel}
