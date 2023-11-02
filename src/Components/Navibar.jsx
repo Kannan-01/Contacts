@@ -47,10 +47,6 @@ function Navibar() {
                 Create
               </Button>
             </Link>
-            <Switch
-              checkedChildren={<i class="fa-solid fa-moon"></i>}
-              unCheckedChildren={<i class="fa-solid fa-sun"></i>}
-            />
 
             {/* avatar */}
             <MDBNavbarItem>

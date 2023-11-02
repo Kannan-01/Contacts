@@ -131,37 +131,37 @@ function Details() {
               <li>
                 <h5>Contact Details...</h5>
               </li>
-              {contact.email && (
+              {contact?.email && (
                 <li>
                   <MDBIcon fas icon="envelope" className="me-3 mt-2" />
-                  {contact.email}
+                  {contact?.email}
                 </li>
               )}
-              {contact.company && (
+              {contact?.company && (
                 <li>
                   <MDBIcon fas icon="building" className="me-3 mt-2" />
-                  {contact.company}
+                  {contact?.company}
                 </li>
               )}
-              {contact.job && (
+              {contact?.job && (
                 <li>
                   <MDBIcon fas icon="map-marker-alt" className="me-3 mt-2" />
-                  {contact.job}
+                  {contact?.job}
                 </li>
               )}
-              {contact.phone && (
+              {contact?.phone && (
                 <li>
                   <MDBIcon fas icon="phone" className="me-3 mt-2" />
-                  {contact.phone}
+                  {contact?.phone}
                 </li>
               )}
-              {contact.dob && (
+              {contact?.dob && (
                 <li>
                   <MDBIcon fas icon="birthday-cake" className="me-3 mt-2" />
-                  {contact.dob}
+                  {contact?.dob}
                 </li>
               )}
-              {contact.notes && (
+              {contact?.notes && (
                 <li>
                   <MDBIcon fas icon="sticky-note" className="me-3 mt-2" />
                   {contact.notes}

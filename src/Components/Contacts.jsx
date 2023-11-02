@@ -41,10 +41,10 @@ function Contacts() {
                       <div
                         className="d-flex align-items-center"
                         draggable
-                        onClick={() => handleShow(item.id)}
+                        onClick={() => handleShow(item?.id)}
                       >
                         <img
-                          src={item.image}
+                          src={item?.image}
                           alt=""
                           style={{ width: "45px", height: "45px" }}
                           className="rounded-circle"
@@ -73,8 +73,8 @@ function Contacts() {
                 </tr>
               ))
             ) : (
-              <p className="fw-bolder mt-3 ms-5 fs-5 text-danger">
-                Nothing to Display !
+              <p className="fw-bolder mt-3 ms-5 fs-5 text-muted">
+                Loading please wait !
               </p>
             )}
           </MDBTableBody>
